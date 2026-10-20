@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright (c) 2026 Tomás Ferreira. Released under the MIT License.
 """
 siia_to_kml.py - turn SIIA map query responses into a KML/KMZ for Google Earth.
 
@@ -29,8 +30,13 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Optional: give layer numbers readable names, e.g. {6: "Camaras", 10: "Condutas"}
-LAYER_NAMES = {}
+# Nomes das camadas (número da camada do MapServer -> nome da pasta no Google Earth)
+LAYER_NAMES = {
+    6: "CVPs",
+    7: "Torres",
+    8: "Traçado aéreo",
+    10: "Condutas sub",
+}
 
 QUERY_RE = re.compile(r"/rest/services/(.+?)/MapServer/(\d+)/query", re.I)
 WEB_MERCATOR = {3857, 102100, 102113, 900913}
@@ -164,7 +170,6 @@ def main():
     layers = {}
     for path in args.inputs:
         loader = load_har if path.lower().endswith(".har") else load_json
-        print(loader(path))
         for layer_id, data in loader(path):
             tf = make_transformer(wkid_of(data))
             label = layer_label(layer_id, data)
