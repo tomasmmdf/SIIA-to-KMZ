@@ -19,8 +19,8 @@ Este documento mostra como utilizar esta ferramenta transformar os objetos em qu
 3. No mapa, clicar em cada CVP, poste ou objeto que quer exportar. Cada click também carrega as condutas e troço aéreo ligadas.
 4. Carregar no botão assinalado na imagem abaixo, para exportar os objetos clickados (Export HAR (sanitized)). Guardar na pasta do script, com o nome `captura.har`. &#91;image: image.png\]
 5. Abrir a pasta , por exemplo `C:\siia`,em que se gravou o .py e o ficheiro .har de captura no Explorador de Ficheiros, clicar na barra de endereço, escrever `cmd` e premir Enter. Alternativamente, navegar para esta pasta na cmd.
-6. Escrever ` python siia_to_kml.py captura.har -o  ``*n``ome``_``f``i``c``h``eiro``_``destino*``.kmz` e premir Enter.
-7. Abrir o ficheiro `*n``o``m``e``_``f``ic``heiro``_``d``e``s``tino*``.kmz` com duplo clique. Abre no Google Earth com uma pasta por camada; ao clicar num ponto ou linha aparecem todos os dados (entidade, freguesia, dimensões, etc.).
+6. Escrever `python siia_to_kml.py captura.har -o nome_ficheiro_destino.kmz` e premir Enter.
+7. Abrir o ficheiro `nome_ficheiro_destino.kmz` com duplo clique. Abre no Google Earth com uma pasta por camada; ao clicar num ponto ou linha aparecem todos os dados (entidade, freguesia, dimensões, etc.).
 8. Alterar os nomes, símbolo e cor dos elementos,  consoante a necessidade. Limpar  os resultados no Earth, removendo o que não queremos, e confirmar as localizações.
 9. Apagar o ficheiro `captura.har`. Contém dados de sessão, por isso não partilhar nem enviar por email.
 
@@ -33,5 +33,5 @@ Este documento mostra como utilizar esta ferramenta transformar os objetos em qu
 | Ficheiro não encontrado | O nome tem de ser igual ao do ficheiro guardado (incluindo `.har`) e estar na mesma pasta que o script. |
 | Só aparecem alguns objetos | Só são exportados os objetos em que clicou. Clicar nos que faltam e guardar um novo HAR. |
 | Uso Mac | Abrir o Terminal e usar `python3` em vez de `python`. |
-| Quero adicionar objetos a um kmz já existente | Dar reload na página, clear logs, repetir 2 a 4. Gravar com um nome de .har diferente, e adaptar a linha `python siia_to_kml.py captura``1``23``.har -o siia``1``23``.kmz`` ``.`` ``A``b``ri``r``  o `` `` novo  ``k``m``z`` ``c`` om o  ``velho, e``  depois  ``a``r``ra`` star  ``o`` s  ``e``le``mento``s`` ``para``  a mesma  ``pa``sta` |
+| Quero adicionar objetos a um kmz já existente | Dar reload na página, clear logs, repetir 2 a 4. Gravar com um nome de .har diferente e adaptar a linha `python siia_to_kml.py captura123.har -o siia123.kmz`. Abrir o novo kmz com o velho e depois arrastar os elementos para a mesma pasta. |
 |  |  |
